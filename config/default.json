@@ -1,3 +1,3 @@
 {
-    "mongoURI":"mongodb+srv://preetisingh:India@2020@contextkeeper-ordvy.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://preetisingh:India@2020@contextkeeper-ordvy.mongodb.net/test?retryWrites=true&w=majority"
 }
