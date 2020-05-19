@@ -25,13 +25,37 @@ const AuthState = props => {
 
   // Load User
 
+  const loadUser = () => console.log("load User");
+
   // Register User
+  const register = async formData => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    try {
+      const res = await axios.post("/api/users", formData, config);
+      dispatch({
+        type: REGISTER_SUCCESS,
+        payload: res.data
+      });
+    } catch (err) {
+      dispatch({
+        type: REGISTER_FAIL,
+        payload: err.res.data.mes
+      });
+    }
+  };
 
   //   Login User
+  const login = () => console.log("load User");
 
   //   Logout
+  const logout = () => console.log("load User");
 
   //   Clear Errors
+  const clearErrors = () => console.log("load User");
 
   return (
     <AuthContext.Provider
@@ -40,7 +64,12 @@ const AuthState = props => {
         isAuthenticated: state.isAuthenticated,
         loading: state.loading,
         error: state.error,
-        user: state.user
+        user: state.user,
+        register,
+        loadUser,
+        login,
+        logout,
+        clearErrors
       }}
     >
       {props.children}
